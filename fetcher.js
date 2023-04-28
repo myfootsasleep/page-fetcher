@@ -6,9 +6,9 @@ const domain = process.argv[2];
 
 request(domain, (error, response, body) => {
   if (error) {
-    console.log('error:', error);
+    return console.log('error:', error);
   }
-  fs.writeFile(`${path}`, body, function(error) {
+  fs.writeFile(path, body, (error) => {
     if (error) {
       console.log("error:", error);
     } else {
